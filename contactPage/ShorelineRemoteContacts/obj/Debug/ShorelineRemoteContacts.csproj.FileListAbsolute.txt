@@ -1,0 +1,8 @@
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/obj/Debug/ShorelineRemoteContacts.csprojAssemblyReference.cache
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/obj/Debug/ShorelineRemoteContacts.csproj.CoreCompileInputs.cache
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/bin/ShorelineRemoteContacts.dll
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/bin/ShorelineRemoteContacts.pdb
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/bin/AjaxControlToolkit.dll
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/obj/Debug/ShorelineRemoteContacts.csproj.CopyComplete
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/obj/Debug/ShorelineRemoteContacts.dll
+/Users/alpinistguy/Desktop/Projects/ShorelineRemoteContacts/ShorelineRemoteContacts/obj/Debug/ShorelineRemoteContacts.pdb
