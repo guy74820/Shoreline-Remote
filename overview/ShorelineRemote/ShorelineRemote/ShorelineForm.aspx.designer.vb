@@ -50,31 +50,31 @@ Partial Public Class ShorelineForm
     Protected WithEvents TabPanel1 As Global.AjaxControlToolkit.TabPanel
     
     '''<summary>
-    '''TextBox1 control.
+    '''permitNumberTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents permitNumberTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox10 control.
+    '''nameTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents nameTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox2 control.
+    '''mowingTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents mowingTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''mowingY control.
@@ -95,22 +95,22 @@ Partial Public Class ShorelineForm
     Protected WithEvents mowingN As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''TextBox11 control.
+    '''permitExpirationTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents permitExpirationTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox3 control.
+    '''electricalTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents electricalTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''electricY control.
@@ -131,49 +131,49 @@ Partial Public Class ShorelineForm
     Protected WithEvents electricN As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''TextBox12 control.
+    '''encroachmentStatusTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents encroachmentStatusTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox4 control.
+    '''expirationTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents expirationTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox13 control.
+    '''coveTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents coveTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox5 control.
+    '''typeTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents typeTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox14 control.
+    '''landUseTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents landUseTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''landUseY control.
@@ -212,58 +212,58 @@ Partial Public Class ShorelineForm
     Protected WithEvents affidavitN As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''TextBox15 control.
+    '''lExpirationTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox15 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lExpirationTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox6 control.
+    '''waterTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents waterTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox16 control.
+    '''lTypeTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox16 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lTypeTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox7 control.
+    '''wOrbTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents wOrbTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox8 control.
+    '''wExpirationTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents wExpirationTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox9 control.
+    '''waterTypeTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents waterTypeTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''TabPanel2 control.
