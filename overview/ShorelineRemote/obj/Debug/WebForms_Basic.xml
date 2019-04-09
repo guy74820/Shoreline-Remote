@@ -73,27 +73,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox1">
+<member name="F:ShorelineRemote.ShorelineForm._permitNumberTextBox">
 <summary>
-TextBox1 control.
+permitNumberTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox10">
+<member name="F:ShorelineRemote.ShorelineForm._nameTextBox">
 <summary>
-TextBox10 control.
+nameTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox2">
+<member name="F:ShorelineRemote.ShorelineForm._mowingTextBox">
 <summary>
-TextBox2 control.
+mowingTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -118,18 +118,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox11">
+<member name="F:ShorelineRemote.ShorelineForm._permitExpirationTextBox">
 <summary>
-TextBox11 control.
+permitExpirationTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox3">
+<member name="F:ShorelineRemote.ShorelineForm._electricalTextBox">
 <summary>
-TextBox3 control.
+electricalTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -154,45 +154,45 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox12">
+<member name="F:ShorelineRemote.ShorelineForm._encroachmentStatusTextBox">
 <summary>
-TextBox12 control.
+encroachmentStatusTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox4">
+<member name="F:ShorelineRemote.ShorelineForm._expirationTextBox">
 <summary>
-TextBox4 control.
+expirationTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox13">
+<member name="F:ShorelineRemote.ShorelineForm._coveTextBox">
 <summary>
-TextBox13 control.
+coveTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox5">
+<member name="F:ShorelineRemote.ShorelineForm._typeTextBox">
 <summary>
-TextBox5 control.
+typeTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox14">
+<member name="F:ShorelineRemote.ShorelineForm._landUseTextBox">
 <summary>
-TextBox14 control.
+landUseTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -235,54 +235,54 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox15">
+<member name="F:ShorelineRemote.ShorelineForm._lExpirationTextBox">
 <summary>
-TextBox15 control.
+lExpirationTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox6">
+<member name="F:ShorelineRemote.ShorelineForm._waterTextBox">
 <summary>
-TextBox6 control.
+waterTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox16">
+<member name="F:ShorelineRemote.ShorelineForm._lTypeTextBox">
 <summary>
-TextBox16 control.
+lTypeTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox7">
+<member name="F:ShorelineRemote.ShorelineForm._wOrbTextBox">
 <summary>
-TextBox7 control.
+wOrbTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox8">
+<member name="F:ShorelineRemote.ShorelineForm._wExpirationTextBox">
 <summary>
-TextBox8 control.
+wExpirationTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:ShorelineRemote.ShorelineForm._TextBox9">
+<member name="F:ShorelineRemote.ShorelineForm._waterTypeTextBox">
 <summary>
-TextBox9 control.
+waterTypeTextBox control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -298,6 +298,123 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ShorelineRemote.ShorelineForm._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton1">
+<summary>
+RadioButton1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton2">
+<summary>
+RadioButton2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton3">
+<summary>
+RadioButton3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton5">
+<summary>
+RadioButton5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox2">
+<summary>
+TextBox2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton4">
+<summary>
+RadioButton4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._RadioButton6">
+<summary>
+RadioButton6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox3">
+<summary>
+TextBox3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox4">
+<summary>
+TextBox4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox5">
+<summary>
+TextBox5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ShorelineRemote.ShorelineForm._TabPanel3">
 <summary>
 TabPanel3 control.
@@ -307,9 +424,162 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox6">
+<summary>
+TextBox6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox12">
+<summary>
+TextBox12 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox7">
+<summary>
+TextBox7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox13">
+<summary>
+TextBox13 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox8">
+<summary>
+TextBox8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox14">
+<summary>
+TextBox14 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox9">
+<summary>
+TextBox9 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox15">
+<summary>
+TextBox15 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox10">
+<summary>
+TextBox10 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox16">
+<summary>
+TextBox16 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox11">
+<summary>
+TextBox11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox17">
+<summary>
+TextBox17 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:ShorelineRemote.ShorelineForm._TabPanel4">
 <summary>
 TabPanel4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._Button1">
+<summary>
+Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox18">
+<summary>
+TextBox18 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox20">
+<summary>
+TextBox20 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._TextBox19">
+<summary>
+TextBox19 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ShorelineRemote.ShorelineForm._Button2">
+<summary>
+Button2 control.
 </summary>
 <remarks>
 Auto-generated field.
