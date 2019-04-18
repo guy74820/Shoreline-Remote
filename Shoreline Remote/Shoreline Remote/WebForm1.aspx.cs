@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -186,10 +187,191 @@ namespace Shoreline_Remote
 
         }
 
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+            radLandUseYes.Checked = false;
+            radLandUseNo.Checked = false;
+            radElectricalYes.Checked = false;
+            radElectricalNo.Checked = false;
+            radAffidavitYes.Checked = false;
+            radAffidavitNo.Checked = false;
+            radMowingYes.Checked = false;
+            radMowingNo.Checked = false;
+            txtPermit.Text = "";
+            txtCove.Text = "";
+            txtDockExp.Text = "";
+            txtElectrical.Text = "";
+            txtEexpiration.Text = "";
+            txtEncroachment.Text = "";
+            txtEType.Text = "";
+            txtLandUse.Text = "";
+            txtLexpiration.Text = "";
+            txtLType.Text = "";
+            txtMowing.Text = "";
+            txtName.Text = "";
+            txtWater.Text = "";
+            txtWaterType.Text = "";
+            txtWExpiration.Text = "";
+            txtwORB.Text = "";
+            txtPermit.Text = "";
+            radSundeckYes.Checked = false;
+            radSundeckNo.Checked = false;
+            radShorelineUsageYes.Checked = false;
+            radShorelineUsageNo.Checked = false;
+            radCoveredYes.Checked = false;
+            radCoveredNo.Checked = false;
+            radEnclosedYes.Checked = false;
+            radEnclosedNo.Checked = false;
+            txtDockType.Text = "";
+            txtSize.Text = "";
+            txtLastInspection.Text = "";
+            txtNumOfSlips.Text = "";
+            txtNotes.Text = "";
+            txtPermit.Text = "";
+            txtState.Text = "";
+            txtAltState.Text = "";
+            txtAddress.Text = "";
+            txtAltAddress.Text = "";
+            txtCity.Text = "";
+            txtAltCity.Text = "";
+            txtZipCode.Text = "";
+            txtAltZipCode.Text = "";
+            txtPhone.Text = "";
+            txtAltPhone.Text = "";
+            txtEmail.Text = "";
+            txtAltEmail.Text = "";
+
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            String Name;
+            String Permit;
+            String Address;
+            Name = txtSearchName.Text;
+            Name = Name.ToUpper();
+            Permit = txtSearchPermit.Text;
+            Permit = Permit.ToUpper();
+            Address = txtSearchAddress.Text;
+            Address = Address.ToUpper();
+            OleDbConnection conn;
+
+            using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+            {
+                string cmd = "select * from Overview";
+                OleDbCommand command = new OleDbCommand(cmd, conn);
+                conn.Open();
+                OleDbDataReader reader;
+                reader = command.ExecuteReader();
+                if (txtSearchName.Text != "")
+                {
+                    //txtPermit.Text = (reader["Permit_Number"].ToString());
+                    txtCove.Text = reader["Cove"].ToString();
+                    txtDockExp.Text = "";
+                    txtElectrical.Text = "";
+                    txtEexpiration.Text = "";
+                    txtEncroachment.Text = "";
+                    txtEType.Text = "";
+                    txtLandUse.Text = "";
+                    txtLexpiration.Text = "";
+                    txtLType.Text = "";
+                    txtMowing.Text = "";
+                    txtName.Text = "";
+                    txtWater.Text = "";
+                    txtWaterType.Text = "";
+                    txtWExpiration.Text = "";
+                    txtwORB.Text = "";
+                    txtDockType.Text = "";
+                    txtSize.Text = "";
+                    txtLastInspection.Text = "";
+                    txtNumOfSlips.Text = "";
+                    txtNotes.Text = "";
+                    txtState.Text = "";
+                    txtAltState.Text = "";
+                    txtAddress.Text = "";
+                    txtAltAddress.Text = "";
+                    txtCity.Text = "";
+                    txtAltCity.Text = "";
+                    txtZipCode.Text = "";
+                    txtAltZipCode.Text = "";
+                    txtPhone.Text = "";
+                    txtAltPhone.Text = "";
+                    txtEmail.Text = "";
+                    txtAltEmail.Text = "";
+                    radLandUseYes.Checked = false;
+                    radLandUseNo.Checked = false;
+                    radElectricalYes.Checked = false;
+                    radElectricalNo.Checked = false;
+                    radAffidavitYes.Checked = false;
+                    radAffidavitNo.Checked = false;
+                    radMowingYes.Checked = false;
+                    radMowingNo.Checked = false;
+                    radSundeckYes.Checked = false;
+                    radSundeckNo.Checked = false;
+                    radShorelineUsageYes.Checked = false;
+                    radShorelineUsageNo.Checked = false;
+                    radCoveredYes.Checked = false;
+                    radCoveredNo.Checked = false;
+                    radEnclosedYes.Checked = false;
+                    radEnclosedNo.Checked = false;
+                }
+            }
+                //}
+            //}
+            /*txtPermit.Text = "";
+            txtCove.Text = "";
+            txtDockExp.Text = "";
+            txtElectrical.Text = "";
+            txtEexpiration.Text = "";
+            txtEncroachment.Text = "";
+            txtEType.Text = "";
+            txtLandUse.Text = "";
+            txtLexpiration.Text = "";
+            txtLType.Text = "";
+            txtMowing.Text = "";
+            txtName.Text = "";
+            txtWater.Text = "";
+            txtWaterType.Text = "";
+            txtWExpiration.Text = "";
+            txtwORB.Text = "";                    
+            txtDockType.Text = "";
+            txtSize.Text = "";
+            txtLastInspection.Text = "";
+            txtNumOfSlips.Text = "";
+            txtNotes.Text = "";
+            txtState.Text = "";
+            txtAltState.Text = "";
+            txtAddress.Text = "";
+            txtAltAddress.Text = "";
+            txtCity.Text = "";
+            txtAltCity.Text = "";
+            txtZipCode.Text = "";
+            txtAltZipCode.Text = "";
+            txtPhone.Text = "";
+            txtAltPhone.Text = "";
+            txtEmail.Text = "";
+            txtAltEmail.Text = "";
+            radLandUseYes.Checked = false;
+            radLandUseNo.Checked = false;
+            radElectricalYes.Checked = false;
+            radElectricalNo.Checked = false;
+            radAffidavitYes.Checked = false;
+            radAffidavitNo.Checked = false;
+            radMowingYes.Checked = false;
+            radMowingNo.Checked = false;
+            radSundeckYes.Checked = false;
+            radSundeckNo.Checked = false;
+            radShorelineUsageYes.Checked = false;
+            radShorelineUsageNo.Checked = false;
+            radCoveredYes.Checked = false;
+            radCoveredNo.Checked = false;
+            radEnclosedYes.Checked = false;
+            radEnclosedNo.Checked = false;*/
+
+        }
         protected void TextBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
-
     }
 }

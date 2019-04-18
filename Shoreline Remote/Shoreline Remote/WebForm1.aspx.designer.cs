@@ -949,31 +949,31 @@ namespace Shoreline_Remote {
         protected global::System.Web.UI.WebControls.Label Label40;
         
         /// <summary>
-        /// TextBox33 control.
+        /// txtSearchName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox33;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchName;
         
         /// <summary>
-        /// TextBox34 control.
+        /// txtSearchAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox34;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchAddress;
         
         /// <summary>
-        /// TextBox35 control.
+        /// txtSearchPermit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox35;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchPermit;
         
         /// <summary>
         /// btnSearch control.

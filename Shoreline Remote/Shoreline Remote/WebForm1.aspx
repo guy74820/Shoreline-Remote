@@ -14,7 +14,7 @@
         	<asp:ScriptManager ID="ScriptManager1" runat="server">
 			</asp:ScriptManager>
         </div>
-        	<ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" Height="498px" Width="622px">
+        	<ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="3" Height="498px" Width="622px">
 				<ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">		
 					<HeaderTemplate>
 						Overview
@@ -211,7 +211,7 @@
 						<asp:Button ID="btnSave" runat="server" Height="40px" OnClick="btnSave_Click" Text="Save" Width="90px" />
 						<br />
 						<br />
-						<asp:Button ID="btnCreate" runat="server" Height="40px" Text="Create New" Width="90px" />
+						<asp:Button ID="btnCreate" runat="server" Height="40px" Text="Create New" Width="90px" OnClick="btnCreate_Click" />
 						<br />
 						<br />
 						<asp:Label ID="Label38" runat="server" Text="Name"></asp:Label>
@@ -220,13 +220,13 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<asp:Label ID="Label40" runat="server" Text="Permit #"></asp:Label>
 						<br />
-						<asp:TextBox ID="TextBox33" runat="server"></asp:TextBox>
+						<asp:TextBox ID="txtSearchName" runat="server"></asp:TextBox>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:TextBox ID="TextBox34" runat="server"></asp:TextBox>
+						<asp:TextBox ID="txtSearchAddress" runat="server"></asp:TextBox>
 						&nbsp;
-						<asp:TextBox ID="TextBox35" runat="server"></asp:TextBox>
+						<asp:TextBox ID="txtSearchPermit" runat="server"></asp:TextBox>
 						<br />
-						<asp:Button ID="btnSearch" runat="server" Height="40px" Text="Search" Width="90px" />
+						<asp:Button ID="btnSearch" runat="server" Height="40px" Text="Search" Width="90px" OnClick="btnSearch_Click" />
 					</ContentTemplate>
 				</ajaxToolkit:TabPanel>
 			</ajaxToolkit:TabContainer>
