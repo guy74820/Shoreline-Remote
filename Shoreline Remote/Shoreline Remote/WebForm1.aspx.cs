@@ -15,10 +15,22 @@ namespace Shoreline_Remote
     {
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            addOverviewToDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
+            using (OleDbConnection conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString)) {
+                string Permit = txtPermit.Text;
+                string SqlQ = "SELECT * FROM Overview WHERE [Permit_Number] =@Permit";
+                OleDbCommand command = new OleDbCommand(SqlQ, conn);
+                conn.Open();
+                command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtPermit.Text.Trim();
+                command.Parameters["@Permit"].Value = Permit;
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+                string testPermit = reader["Permit_Number"].ToString;
+
+                addOverviewToDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
             addDockToDatabase(txtPermit.Text, radSundeckYes.Checked, radSundeckNo.Checked, radShorelineUsageYes.Checked, radShorelineUsageNo.Checked, radCoveredYes.Checked, radCoveredNo.Checked, radEnclosedYes.Checked, radEnclosedNo.Checked, txtDockType.Text, txtSize.Text, txtLastInspection.Text, txtNumOfSlips.Text, txtNotes.Text);
             addContactToDatabase(txtPermit.Text, txtState.Text, txtAltState.Text, txtAddress.Text, txtAltAddress.Text, txtCity.Text, txtAltCity.Text, txtZipCode.Text, txtAltZipCode.Text, txtPhone.Text, txtAltPhone.Text, txtEmail.Text, txtAltEmail.Text);
 
+        }
         }
 
         private void addContactToDatabase(string txtPermit, string txtstate, string txtAltState, string txtAddress, string txtAltAddress, string txtCity, string txtAltCity, string txtZipCode, string txtAltZipCode, string txtPhone, string txtAltPhone, string txtEmail, string txtAltEmail)
@@ -35,17 +47,17 @@ namespace Shoreline_Remote
 
                     cmd.Parameters.AddWithValue("@Permit_Number", txtPermit);
                     cmd.Parameters.AddWithValue("@Address", txtAddress);
-                    cmd.Parameters.AddWithValue("@Alternate_Address",txtAltAddress);
+                    cmd.Parameters.AddWithValue("@Alternate_Address", txtAltAddress);
                     cmd.Parameters.AddWithValue("@City", txtCity);
-                    cmd.Parameters.AddWithValue("@Alternate_City",txtAltCity);
-                    cmd.Parameters.AddWithValue("@State",txtstate);
-                    cmd.Parameters.AddWithValue("@Alternate_State",txtAltState);
-                    cmd.Parameters.AddWithValue("@Zip_Code",txtZipCode);
-                    cmd.Parameters.AddWithValue("@Alternate_Zip_Code",txtAltZipCode);
-                    cmd.Parameters.AddWithValue("@Phone",txtPhone);
-                    cmd.Parameters.AddWithValue("@Alternate_Phone",txtAltPhone);
-                    cmd.Parameters.AddWithValue("@Email",txtEmail);
-                    cmd.Parameters.AddWithValue("@Alternate_Email",txtAltEmail);
+                    cmd.Parameters.AddWithValue("@Alternate_City", txtAltCity);
+                    cmd.Parameters.AddWithValue("@State", txtstate);
+                    cmd.Parameters.AddWithValue("@Alternate_State", txtAltState);
+                    cmd.Parameters.AddWithValue("@Zip_Code", txtZipCode);
+                    cmd.Parameters.AddWithValue("@Alternate_Zip_Code", txtAltZipCode);
+                    cmd.Parameters.AddWithValue("@Phone", txtPhone);
+                    cmd.Parameters.AddWithValue("@Alternate_Phone", txtAltPhone);
+                    cmd.Parameters.AddWithValue("@Email", txtEmail);
+                    cmd.Parameters.AddWithValue("@Alternate_Email", txtAltEmail);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -257,118 +269,407 @@ namespace Shoreline_Remote
             OleDbConnection conn;
 
             using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
-            {
-                string cmd = "select * from Overview";
-                OleDbCommand command = new OleDbCommand(cmd, conn);
-                conn.Open();
-                OleDbDataReader reader;
-                reader = command.ExecuteReader();
+            {           
                 if (txtSearchName.Text != "")
                 {
-                    //txtPermit.Text = (reader["Permit_Number"].ToString());
-                    txtCove.Text = reader["Cove"].ToString();
-                    txtDockExp.Text = "";
-                    txtElectrical.Text = "";
-                    txtEexpiration.Text = "";
-                    txtEncroachment.Text = "";
-                    txtEType.Text = "";
-                    txtLandUse.Text = "";
-                    txtLexpiration.Text = "";
-                    txtLType.Text = "";
-                    txtMowing.Text = "";
-                    txtName.Text = "";
-                    txtWater.Text = "";
-                    txtWaterType.Text = "";
-                    txtWExpiration.Text = "";
-                    txtwORB.Text = "";
-                    txtDockType.Text = "";
-                    txtSize.Text = "";
-                    txtLastInspection.Text = "";
-                    txtNumOfSlips.Text = "";
-                    txtNotes.Text = "";
-                    txtState.Text = "";
-                    txtAltState.Text = "";
-                    txtAddress.Text = "";
-                    txtAltAddress.Text = "";
-                    txtCity.Text = "";
-                    txtAltCity.Text = "";
-                    txtZipCode.Text = "";
-                    txtAltZipCode.Text = "";
-                    txtPhone.Text = "";
-                    txtAltPhone.Text = "";
-                    txtEmail.Text = "";
-                    txtAltEmail.Text = "";
-                    radLandUseYes.Checked = false;
-                    radLandUseNo.Checked = false;
-                    radElectricalYes.Checked = false;
-                    radElectricalNo.Checked = false;
-                    radAffidavitYes.Checked = false;
-                    radAffidavitNo.Checked = false;
-                    radMowingYes.Checked = false;
-                    radMowingNo.Checked = false;
-                    radSundeckYes.Checked = false;
-                    radSundeckNo.Checked = false;
-                    radShorelineUsageYes.Checked = false;
-                    radShorelineUsageNo.Checked = false;
-                    radCoveredYes.Checked = false;
-                    radCoveredNo.Checked = false;
-                    radEnclosedYes.Checked = false;
-                    radEnclosedNo.Checked = false;
-                }
-            }
-                //}
-            //}
-            /*txtPermit.Text = "";
-            txtCove.Text = "";
-            txtDockExp.Text = "";
-            txtElectrical.Text = "";
-            txtEexpiration.Text = "";
-            txtEncroachment.Text = "";
-            txtEType.Text = "";
-            txtLandUse.Text = "";
-            txtLexpiration.Text = "";
-            txtLType.Text = "";
-            txtMowing.Text = "";
-            txtName.Text = "";
-            txtWater.Text = "";
-            txtWaterType.Text = "";
-            txtWExpiration.Text = "";
-            txtwORB.Text = "";                    
-            txtDockType.Text = "";
-            txtSize.Text = "";
-            txtLastInspection.Text = "";
-            txtNumOfSlips.Text = "";
-            txtNotes.Text = "";
-            txtState.Text = "";
-            txtAltState.Text = "";
-            txtAddress.Text = "";
-            txtAltAddress.Text = "";
-            txtCity.Text = "";
-            txtAltCity.Text = "";
-            txtZipCode.Text = "";
-            txtAltZipCode.Text = "";
-            txtPhone.Text = "";
-            txtAltPhone.Text = "";
-            txtEmail.Text = "";
-            txtAltEmail.Text = "";
-            radLandUseYes.Checked = false;
-            radLandUseNo.Checked = false;
-            radElectricalYes.Checked = false;
-            radElectricalNo.Checked = false;
-            radAffidavitYes.Checked = false;
-            radAffidavitNo.Checked = false;
-            radMowingYes.Checked = false;
-            radMowingNo.Checked = false;
-            radSundeckYes.Checked = false;
-            radSundeckNo.Checked = false;
-            radShorelineUsageYes.Checked = false;
-            radShorelineUsageNo.Checked = false;
-            radCoveredYes.Checked = false;
-            radCoveredNo.Checked = false;
-            radEnclosedYes.Checked = false;
-            radEnclosedNo.Checked = false;*/
+                    try
+                    {
+                        string SqlQ = "SELECT * FROM Overview WHERE [Full_Name] =@Name";
+                        OleDbCommand command = new OleDbCommand(SqlQ, conn);
+                        conn.Open();
+                        command.Parameters.Add("@Name", OleDbType.VarChar).Value = txtSearchName.Text.Trim();
+                        command.Parameters["@Name"].Value = Name;
+                        OleDbDataReader reader = command.ExecuteReader();
+                        reader.Read();
 
+                        txtPermit.Text = (reader["Permit_Number"].ToString());
+                        txtCove.Text = reader["Cove"].ToString();
+                        txtDockExp.Text = reader["Dock_Expiration"].ToString();
+                        txtElectrical.Text = reader["Electrical"].ToString();
+                        txtEexpiration.Text = reader["E_Expiration"].ToString();
+                        txtEncroachment.Text = reader["Encroachment_Status"].ToString();
+                        txtEType.Text = reader["E_Type"].ToString();
+                        txtLandUse.Text = reader["Land_Use_Text"].ToString();
+                        txtLexpiration.Text = reader["L_Expiration"].ToString();
+                        txtLType.Text = reader["L_Type"].ToString();
+                        txtMowing.Text = reader["Mowing_Text"].ToString();
+                        txtName.Text = reader["Full_Name"].ToString();
+                        txtWater.Text = reader["Water"].ToString();
+                        txtWaterType.Text = reader["Water_Type"].ToString();
+                        txtWExpiration.Text = reader["W_Expiration"].ToString();
+                        txtwORB.Text = reader["W_ORB_Number"].ToString();
+                        if (reader["Land_Use"].Equals(true))
+                        {
+                            radLandUseYes.Checked = true;
+                        }
+                        else
+                        {
+                            radLandUseNo.Checked = true;
+                        }
+                        if (reader["Electrical"].Equals(true))
+                        {
+                            radElectricalYes.Checked = true;
+                        }
+                        else
+                        {
+                            radElectricalNo.Checked = true;
+                        }
+                        if (reader["E_Affidavit"].Equals(true))
+                        {
+                            radAffidavitYes.Checked = true;
+                        }
+                        else
+                        {
+                            radAffidavitNo.Checked = true;
+                        }
+                        if (reader["Mowing"].Equals(true))
+                        {
+                            radMowingYes.Checked = true;
+                        }
+                        else
+                        {
+                            radMowingNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Dock WHERE [Name] =@Name";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Name", OleDbType.VarChar).Value = txtSearchName.Text.Trim();
+                        command.Parameters["@Name"].Value = Name;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtLastInspection.Text = reader["Last_Inspection"].ToString();
+                        txtNumOfSlips.Text = reader["Number_of_Slips"].ToString();
+                        txtNotes.Text = reader["Notes"].ToString();
+                        txtSize.Text = reader["Craft_Size"].ToString();
+                        txtDockType.Text = reader["Dock_Type"].ToString();
+                        if (reader["Sundeck"].Equals(true))
+                        {
+                            radSundeckYes.Checked = true;
+                        }
+                        else
+                        {
+                            radSundeckNo.Checked = true;
+                        }
+                        if (reader["Shoreline_Usage"].Equals(true))
+                        {
+                            radShorelineUsageYes.Checked = true;
+                        }
+                        else
+                        {
+                            radShorelineUsageNo.Checked = true;
+                        }
+                        if (reader["Covered"].Equals(true))
+                        {
+                            radCoveredYes.Checked = true;
+                        }
+                        else
+                        {
+                            radCoveredNo.Checked = true;
+                        }
+                        if (reader["Enclosed_Dock"].Equals(true))
+                        {
+                            radEnclosedYes.Checked = true;
+                        }
+                        else
+                        {
+                            radEnclosedNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Contact WHERE [Name] =@Name";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Name", OleDbType.VarChar).Value = txtSearchName.Text.Trim();
+                        command.Parameters["@Name"].Value = Name;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtState.Text = reader["State"].ToString();
+                        txtAltState.Text = reader["Alternate_State"].ToString();
+                        txtAddress.Text = reader["Address"].ToString();
+                        txtAltAddress.Text = reader["Alternate_Address"].ToString();
+                        txtCity.Text = reader["City"].ToString();
+                        txtAltCity.Text = reader["Alternate_City"].ToString();
+                        txtZipCode.Text = reader["Zip_Code"].ToString();
+                        txtAltZipCode.Text = reader["Alternate_Zip_Code"].ToString();
+                        txtPhone.Text = reader["Phone"].ToString();
+                        txtAltPhone.Text = reader["Alternate_Phone"].ToString();
+                        txtEmail.Text = reader["Email"].ToString();
+                        txtAltEmail.Text = reader["Alternate_Email"].ToString();
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "Error: That name doesn't exist!");
+                    }
+                }
+
+
+                else if (txtSearchAddress.Text != "")
+                {
+                    try
+                    {
+                        string SqlQ = "SELECT * FROM Overview WHERE [Address] =@Address";
+                        OleDbCommand command = new OleDbCommand(SqlQ, conn);
+                        conn.Open();
+                        command.Parameters.Add("@Address", OleDbType.VarChar).Value = txtSearchAddress.Text.Trim();
+                        command.Parameters["@Address"].Value = Address;
+                        OleDbDataReader reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtPermit.Text = (reader["Permit_Number"].ToString());
+                        txtCove.Text = reader["Cove"].ToString();
+                        txtDockExp.Text = reader["Dock_Expiration"].ToString();
+                        txtElectrical.Text = reader["Electrical"].ToString();
+                        txtEexpiration.Text = reader["E_Expiration"].ToString();
+                        txtEncroachment.Text = reader["Encroachment_Status"].ToString();
+                        txtEType.Text = reader["E_Type"].ToString();
+                        txtLandUse.Text = reader["Land_Use_Text"].ToString();
+                        txtLexpiration.Text = reader["L_Expiration"].ToString();
+                        txtLType.Text = reader["L_Type"].ToString();
+                        txtMowing.Text = reader["Mowing_Text"].ToString();
+                        txtName.Text = reader["Full_Name"].ToString();
+                        txtWater.Text = reader["Water"].ToString();
+                        txtWaterType.Text = reader["Water_Type"].ToString();
+                        txtWExpiration.Text = reader["W_Expiration"].ToString();
+                        txtwORB.Text = reader["W_ORB_Number"].ToString();
+                        if (reader["Land_Use"].Equals(true))
+                        {
+                            radLandUseYes.Checked = true;
+                        }
+                        else
+                        {
+                            radLandUseNo.Checked = true;
+                        }
+                        if (reader["Electrical"].Equals(true))
+                        {
+                            radElectricalYes.Checked = true;
+                        }
+                        else
+                        {
+                            radElectricalNo.Checked = true;
+                        }
+                        if (reader["E_Affidavit"].Equals(true))
+                        {
+                            radAffidavitYes.Checked = true;
+                        }
+                        else
+                        {
+                            radAffidavitNo.Checked = true;
+                        }
+                        if (reader["Mowing"].Equals(true))
+                        {
+                            radMowingYes.Checked = true;
+                        }
+                        else
+                        {
+                            radMowingNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Dock WHERE [Address] =@Address";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Address", OleDbType.VarChar).Value = txtSearchAddress.Text.Trim();
+                        command.Parameters["@Address"].Value = Address;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtLastInspection.Text = reader["Last_Inspection"].ToString();
+                        txtNumOfSlips.Text = reader["Number_of_Slips"].ToString();
+                        txtNotes.Text = reader["Notes"].ToString();
+                        txtSize.Text = reader["Craft_Size"].ToString();
+                        txtDockType.Text = reader["Dock_Type"].ToString();
+                        if (reader["Sundeck"].Equals(true))
+                        {
+                            radSundeckYes.Checked = true;
+                        }
+                        else
+                        {
+                            radSundeckNo.Checked = true;
+                        }
+                        if (reader["Shoreline_Usage"].Equals(true))
+                        {
+                            radShorelineUsageYes.Checked = true;
+                        }
+                        else
+                        {
+                            radShorelineUsageNo.Checked = true;
+                        }
+                        if (reader["Covered"].Equals(true))
+                        {
+                            radCoveredYes.Checked = true;
+                        }
+                        else
+                        {
+                            radCoveredNo.Checked = true;
+                        }
+                        if (reader["Enclosed_Dock"].Equals(true))
+                        {
+                            radEnclosedYes.Checked = true;
+                        }
+                        else
+                        {
+                            radEnclosedNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Contact WHERE [Address] =@Address";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Address", OleDbType.VarChar).Value = txtSearchAddress.Text.Trim();
+                        command.Parameters["@Address"].Value = Address;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtState.Text = reader["State"].ToString();
+                        txtAltState.Text = reader["Alternate_State"].ToString();
+                        txtAddress.Text = reader["Address"].ToString();
+                        txtAltAddress.Text = reader["Alternate_Address"].ToString();
+                        txtCity.Text = reader["City"].ToString();
+                        txtAltCity.Text = reader["Alternate_City"].ToString();
+                        txtZipCode.Text = reader["Zip_Code"].ToString();
+                        txtAltZipCode.Text = reader["Alternate_Zip_Code"].ToString();
+                        txtPhone.Text = reader["Phone"].ToString();
+                        txtAltPhone.Text = reader["Alternate_Phone"].ToString();
+                        txtEmail.Text = reader["Email"].ToString();
+                        txtAltEmail.Text = reader["Alternate_Email"].ToString();
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "Error: That Address doesn't exist!");
+                    }
+                }
+
+                else if (txtSearchPermit.Text != "")
+                {
+                    try
+                    {
+                        string SqlQ = "SELECT * FROM Overview WHERE [Permit_Number] =@Permit";
+                        OleDbCommand command = new OleDbCommand(SqlQ, conn);
+                        conn.Open();
+                        command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtSearchPermit.Text.Trim();
+                        command.Parameters["@Permit"].Value = Permit;
+                        OleDbDataReader reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtPermit.Text = (reader["Permit_Number"].ToString());
+                        txtCove.Text = reader["Cove"].ToString();
+                        txtDockExp.Text = reader["Dock_Expiration"].ToString();
+                        txtElectrical.Text = reader["Electrical"].ToString();
+                        txtEexpiration.Text = reader["E_Expiration"].ToString();
+                        txtEncroachment.Text = reader["Encroachment_Status"].ToString();
+                        txtEType.Text = reader["E_Type"].ToString();
+                        txtLandUse.Text = reader["Land_Use_Text"].ToString();
+                        txtLexpiration.Text = reader["L_Expiration"].ToString();
+                        txtLType.Text = reader["L_Type"].ToString();
+                        txtMowing.Text = reader["Mowing_Text"].ToString();
+                        txtName.Text = reader["Full_Name"].ToString();
+                        txtWater.Text = reader["Water"].ToString();
+                        txtWaterType.Text = reader["Water_Type"].ToString();
+                        txtWExpiration.Text = reader["W_Expiration"].ToString();
+                        txtwORB.Text = reader["W_ORB_Number"].ToString();
+                        if (reader["Land_Use"].Equals(true))
+                        {
+                            radLandUseYes.Checked = true;
+                        }
+                        else
+                        {
+                            radLandUseNo.Checked = true;
+                        }
+                        if (reader["Electrical"].Equals(true))
+                        {
+                            radElectricalYes.Checked = true;
+                        }
+                        else
+                        {
+                            radElectricalNo.Checked = true;
+                        }
+                        if (reader["E_Affidavit"].Equals(true))
+                        {
+                            radAffidavitYes.Checked = true;
+                        }
+                        else
+                        {
+                            radAffidavitNo.Checked = true;
+                        }
+                        if (reader["Mowing"].Equals(true))
+                        {
+                            radMowingYes.Checked = true;
+                        }
+                        else
+                        {
+                            radMowingNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Dock WHERE [Permit_Number] =@Permit";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtSearchPermit.Text.Trim();
+                        command.Parameters["@Permit"].Value = Permit;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtLastInspection.Text = reader["Last_Inspection"].ToString();
+                        txtNumOfSlips.Text = reader["Number_of_Slips"].ToString();
+                        txtNotes.Text = reader["Notes"].ToString();
+                        txtSize.Text = reader["Craft_Size"].ToString();
+                        txtDockType.Text = reader["Dock_Type"].ToString();
+                        if (reader["Sundeck"].Equals(true))
+                        {
+                            radSundeckYes.Checked = true;
+                        }
+                        else
+                        {
+                            radSundeckNo.Checked = true;
+                        }
+                        if (reader["Shoreline_Usage"].Equals(true))
+                        {
+                            radShorelineUsageYes.Checked = true;
+                        }
+                        else
+                        {
+                            radShorelineUsageNo.Checked = true;
+                        }
+                        if (reader["Covered"].Equals(true))
+                        {
+                            radCoveredYes.Checked = true;
+                        }
+                        else
+                        {
+                            radCoveredNo.Checked = true;
+                        }
+                        if (reader["Enclosed_Dock"].Equals(true))
+                        {
+                            radEnclosedYes.Checked = true;
+                        }
+                        else
+                        {
+                            radEnclosedNo.Checked = true;
+                        }
+
+                        SqlQ = "SELECT * FROM Contact WHERE [Permit_Number] =@Permit";
+                        command = new OleDbCommand(SqlQ, conn);
+                        command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtSearchPermit.Text.Trim();
+                        command.Parameters["@Permit"].Value = Permit;
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        txtState.Text = reader["State"].ToString();
+                        txtAltState.Text = reader["Alternate_State"].ToString();
+                        txtAddress.Text = reader["Address"].ToString();
+                        txtAltAddress.Text = reader["Alternate_Address"].ToString();
+                        txtCity.Text = reader["City"].ToString();
+                        txtAltCity.Text = reader["Alternate_City"].ToString();
+                        txtZipCode.Text = reader["Zip_Code"].ToString();
+                        txtAltZipCode.Text = reader["Alternate_Zip_Code"].ToString();
+                        txtPhone.Text = reader["Phone"].ToString();
+                        txtAltPhone.Text = reader["Alternate_Phone"].ToString();
+                        txtEmail.Text = reader["Email"].ToString();
+                        txtAltEmail.Text = reader["Alternate_Email"].ToString();
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "Error: That Permit Number doesn't exist!");
+                    }
+                }
+
+            }
         }
+
         protected void TextBox4_TextChanged(object sender, EventArgs e)
         {
 
