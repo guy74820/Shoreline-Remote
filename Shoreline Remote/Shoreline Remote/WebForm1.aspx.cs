@@ -15,22 +15,213 @@ namespace Shoreline_Remote
     {
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            using (OleDbConnection conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString)) {
-                string Permit = txtPermit.Text;
-                string SqlQ = "SELECT * FROM Overview WHERE [Permit_Number] =@Permit";
-                OleDbCommand command = new OleDbCommand(SqlQ, conn);
-                conn.Open();
-                command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtPermit.Text.Trim();
-                command.Parameters["@Permit"].Value = Permit;
-                OleDbDataReader reader = command.ExecuteReader();
-                reader.Read();
-                string testPermit = reader["Permit_Number"].ToString;
+            using (OleDbConnection conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+            {
+                try
+                {
+                    string Permit = txtPermit.Text;
+                    string SqlQ = "SELECT * FROM Overview WHERE [Permit_Number] =@Permit";
+                    OleDbCommand command = new OleDbCommand(SqlQ, conn);
+                    conn.Open();
+                    command.Parameters.Add("@Permit", OleDbType.VarChar).Value = txtPermit.Text.Trim();
+                    command.Parameters["@Permit"].Value = Permit;
+                    OleDbDataReader reader = command.ExecuteReader();
+                    reader.Read();
+                    string testPermit = reader["Permit_Number"].ToString();
 
-                addOverviewToDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
-            addDockToDatabase(txtPermit.Text, radSundeckYes.Checked, radSundeckNo.Checked, radShorelineUsageYes.Checked, radShorelineUsageNo.Checked, radCoveredYes.Checked, radCoveredNo.Checked, radEnclosedYes.Checked, radEnclosedNo.Checked, txtDockType.Text, txtSize.Text, txtLastInspection.Text, txtNumOfSlips.Text, txtNotes.Text);
-            addContactToDatabase(txtPermit.Text, txtState.Text, txtAltState.Text, txtAddress.Text, txtAltAddress.Text, txtCity.Text, txtAltCity.Text, txtZipCode.Text, txtAltZipCode.Text, txtPhone.Text, txtAltPhone.Text, txtEmail.Text, txtAltEmail.Text);
+                    if (Permit.Equals(testPermit))
+                    {
+                        updateOverviewInDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
+                        updateDockInDatabase(txtPermit.Text, radSundeckYes.Checked, radSundeckNo.Checked, radShorelineUsageYes.Checked, radShorelineUsageNo.Checked, radCoveredYes.Checked, radCoveredNo.Checked, radEnclosedYes.Checked, radEnclosedNo.Checked, txtDockType.Text, txtSize.Text, txtLastInspection.Text, txtNumOfSlips.Text, txtNotes.Text);
+                        updateContactInDatabase(txtPermit.Text, txtState.Text, txtAltState.Text, txtAddress.Text, txtAltAddress.Text, txtCity.Text, txtAltCity.Text, txtZipCode.Text, txtAltZipCode.Text, txtPhone.Text, txtAltPhone.Text, txtEmail.Text, txtAltEmail.Text);
 
+                        addOverviewToDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
+                        addDockToDatabase(txtPermit.Text, radSundeckYes.Checked, radSundeckNo.Checked, radShorelineUsageYes.Checked, radShorelineUsageNo.Checked, radCoveredYes.Checked, radCoveredNo.Checked, radEnclosedYes.Checked, radEnclosedNo.Checked, txtDockType.Text, txtSize.Text, txtLastInspection.Text, txtNumOfSlips.Text, txtNotes.Text);
+                        addContactToDatabase(txtPermit.Text, txtState.Text, txtAltState.Text, txtAddress.Text, txtAltAddress.Text, txtCity.Text, txtAltCity.Text, txtZipCode.Text, txtAltZipCode.Text, txtPhone.Text, txtAltPhone.Text, txtEmail.Text, txtAltEmail.Text);
+
+                    }
+                    else
+                    {
+                        addOverviewToDatabase(radLandUseYes.Checked, radLandUseNo.Checked, radElectricalYes.Checked, radElectricalNo.Checked, radAffidavitYes.Checked, radAffidavitNo.Checked, radMowingYes.Checked, radMowingNo.Checked, txtPermit.Text, txtCove.Text, txtDockExp.Text, txtElectrical.Text, txtEexpiration.Text, txtEncroachment.Text, txtEType.Text, txtLandUse.Text, txtLexpiration.Text, txtLType.Text, txtMowing.Text, txtName.Text, txtWater.Text, txtWaterType.Text, txtWExpiration.Text, txtwORB.Text);
+                        addDockToDatabase(txtPermit.Text, radSundeckYes.Checked, radSundeckNo.Checked, radShorelineUsageYes.Checked, radShorelineUsageNo.Checked, radCoveredYes.Checked, radCoveredNo.Checked, radEnclosedYes.Checked, radEnclosedNo.Checked, txtDockType.Text, txtSize.Text, txtLastInspection.Text, txtNumOfSlips.Text, txtNotes.Text);
+                        addContactToDatabase(txtPermit.Text, txtState.Text, txtAltState.Text, txtAddress.Text, txtAltAddress.Text, txtCity.Text, txtAltCity.Text, txtZipCode.Text, txtAltZipCode.Text, txtPhone.Text, txtAltPhone.Text, txtEmail.Text, txtAltEmail.Text);
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "Error: You must have a Permit Number!");
+
+                }
+            }
         }
+
+        private void updateContactInDatabase(string txtPermit, string txtstate, string txtAltState, string txtAddress, string txtAltAddress, string txtCity, string txtAltCity, string txtZipCode, string txtAltZipCode, string txtPhone, string txtAltPhone, string txtEmail, string txtAltEmail)
+        {
+            OleDbConnection conn;
+            OleDbCommand cmd;
+
+            using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+            {
+                using (cmd = conn.CreateCommand())
+                {
+                    //cmd.CommandText = "UPDATE Contact SET Address = @Address, Alternate_Address = @Alternate_Address, City = @City, Alternate_City = @Alternate_City, State = @State, Alternate_State = @Alternate_State, Zip_Code = @Zip_Code, Alternate_Zip_Code = @Alternate_Zip_Code, Phone = @Phone, Alternate_Phone = @Alternate_Phone, Email = @Email, Alternate_Email = @Alternate_Email  WHERE Permit_Number =" + txtPermit;
+                    cmd.CommandText = "DELETE FROM Contact WHERE Permit_Number =" + txtPermit;
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@Permit_Number", txtPermit);
+                    /*
+                    cmd.Parameters.AddWithValue("@Address", txtAddress);
+                    cmd.Parameters.AddWithValue("@Alternate_Address", txtAltAddress);
+                    cmd.Parameters.AddWithValue("@City", txtCity);
+                    cmd.Parameters.AddWithValue("@Alternate_City", txtAltCity);
+                    cmd.Parameters.AddWithValue("@State", txtstate);
+                    cmd.Parameters.AddWithValue("@Alternate_State", txtAltState);
+                    cmd.Parameters.AddWithValue("@Zip_Code", txtZipCode);
+                    cmd.Parameters.AddWithValue("@Alternate_Zip_Code", txtAltZipCode);
+                    cmd.Parameters.AddWithValue("@Phone", txtPhone);
+                    cmd.Parameters.AddWithValue("@Alternate_Phone", txtAltPhone);
+                    cmd.Parameters.AddWithValue("@Email", txtEmail);
+                    cmd.Parameters.AddWithValue("@Alternate_Email", txtAltEmail);
+                    */
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void updateDockInDatabase(string txtPermit, Boolean radSundeckYes, Boolean radSundeckNo, Boolean radShorelineUsageYes, Boolean radShorelineUsageNo, Boolean radCoveredYes, Boolean radCoveredNo, Boolean radEnclosedYes, Boolean radEnclosedNo, string txtDockType, string txtSize, string txtLastInspection, string txtNumOfSlips, string txtNotes)
+        {
+            OleDbConnection conn;
+            OleDbCommand cmd;
+            using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+            {
+                using (cmd = conn.CreateCommand())
+                {
+
+                    //cmd.CommandText = "UPDATE Dock(Permit_Number,Dock_Type,Craft_Size,Sundeck,Shoreline_Usage,Covered,Enclosed_Dock,Last_Inspection,Number_of_Slips,Notes) VALUES (@Permit_Number,@Dock_Type,@Craft_Size,@Sundeck,@Shoreline_Usage,@Covered,@Enclosed_Dock,@Last_Inspection,@Number_of_Slips,@Notes)";
+                    cmd.CommandText = "DELETE FROM Dock WHERE Permit_Number =" + txtPermit;
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@Permit_Number", txtPermit);
+                    /*
+                    cmd.Parameters.AddWithValue("@Dock_Type", txtDockType);
+                    cmd.Parameters.AddWithValue("@Craft_Size", txtSize);
+                    if (radSundeckYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Sundeck", 1);
+                    }
+                    if (radSundeckNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Sundeck", 0);
+                    }
+                    if (radShorelineUsageYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Shoreline_Usage", 1);
+                    }
+                    if (radShorelineUsageNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Shoreline_Usage", 0);
+                    }
+                    if (radCoveredYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Covered", 1);
+                    }
+                    if (radCoveredNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Covered", 0);
+                    }
+                    if (radEnclosedYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Enclosed_Dock", 1);
+                    }
+                    if (radEnclosedNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Enclosed_Dock", 0);
+                    }
+                    cmd.Parameters.AddWithValue("@Last_Inspection", txtLastInspection);
+                    cmd.Parameters.AddWithValue("@Number_of_Slips", txtNumOfSlips);
+                    cmd.Parameters.AddWithValue("@Notes", txtNotes);
+                    */
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        private void updateOverviewInDatabase(Boolean LandUseYes, Boolean LandUseNo, Boolean ElectricalYes, Boolean ElectricalNo, Boolean AffidavitYes, Boolean AffidavitNo, Boolean mowingYes, Boolean mowingNo, string txtPermit, string txtCove, string txtDockExp, string txtElectrical, string txtEexpiration, string txtEncroachment, string txtEType, string txtLandUse, string txtLexpiration, string txtLType, string txtMowing, string txtName, string txtWater, string txtWaterType, string txtWExpiration, string txtwORB)
+        {
+            OleDbConnection conn;
+            OleDbCommand cmd;
+
+            using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+            {
+                using (cmd = conn.CreateCommand())
+                {
+
+                    //cmd.CommandText = "UPDATE Overview(Land_Use, Electrical, E_Affidavit, Mowing, Permit_Number,Mowing_Text,Electrical_Text,E_Expiration,E_Type,Water,W_ORB_Number,W_Expiration,Water_Type,Full_Name,Dock_Expiration,Encroachment_Status,Cove,Land_Use_Text,L_Expiration,L_Type) VALUES (@Land_Use, @Electrical, @E_Affidavit,@Mowing, @Permit_Number,@Mowing_Text,@Electrical_Text,@E_Expiration,@E_Type,@Water,@W_ORB_Number,@W_Expiration,@Water_Type,@Full_Name,@Dock_Expiration,@Encroachment_Status,@Cove,@Land_Use_Text,@L_Expiration,@L_Type)";
+                    cmd.CommandText = "DELETE FROM Overview WHERE Permit_Number =" + txtPermit;
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@Permit_Number", txtPermit);
+                    /*
+                    if (LandUseYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Land_Use", 1);
+                    }
+                    if (LandUseNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Land_Use", 0);
+                    }
+                    if (ElectricalYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Electrical", 1);
+                    }
+                    if (ElectricalNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Electrical", 0);
+                    }
+                    if (AffidavitYes)
+                    {
+                        cmd.Parameters.AddWithValue("@E_Affidavit", 1);
+                    }
+                    if (AffidavitNo)
+                    {
+                        cmd.Parameters.AddWithValue("@E_Affidavit", 0);
+                    }
+                    if (mowingYes)
+                    {
+                        cmd.Parameters.AddWithValue("@Mowing", 1);
+                    }
+                    if (mowingNo)
+                    {
+                        cmd.Parameters.AddWithValue("@Mowing", 0);
+                    }                    
+                    cmd.Parameters.AddWithValue("@Mowing_Text", txtMowing);
+                    cmd.Parameters.AddWithValue("@Electrical_Text", txtElectrical);
+                    cmd.Parameters.AddWithValue("@E_Expiration", txtEexpiration);
+                    cmd.Parameters.AddWithValue("@E_Type", txtEType);
+                    cmd.Parameters.AddWithValue("@Water", txtWater);
+                    cmd.Parameters.AddWithValue("@W_ORB_Number", txtwORB);
+                    cmd.Parameters.AddWithValue("@W_Expiration", txtWExpiration);
+                    cmd.Parameters.AddWithValue("@Water_Type", txtWaterType);
+                    cmd.Parameters.AddWithValue("@Full_Name", txtName);
+                    cmd.Parameters.AddWithValue("@Dock_Expiration", txtDockExp);
+                    cmd.Parameters.AddWithValue("@Encroachment_Status", txtEncroachment);
+                    cmd.Parameters.AddWithValue("@Cove", txtCove);
+                    cmd.Parameters.AddWithValue("@Land_Use_Text) ", txtLandUse);
+                    cmd.Parameters.AddWithValue("@L_Expiration", txtLexpiration);
+                    cmd.Parameters.AddWithValue("@L_Type", txtLType);
+                    */
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+
+
+                }
+            }
         }
 
         private void addContactToDatabase(string txtPermit, string txtstate, string txtAltState, string txtAddress, string txtAltAddress, string txtCity, string txtAltCity, string txtZipCode, string txtAltZipCode, string txtPhone, string txtAltPhone, string txtEmail, string txtAltEmail)
@@ -269,7 +460,7 @@ namespace Shoreline_Remote
             OleDbConnection conn;
 
             using (conn = new OleDbConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
-            {           
+            {
                 if (txtSearchName.Text != "")
                 {
                     try
